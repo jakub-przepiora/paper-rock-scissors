@@ -5,9 +5,9 @@ class ChooseList extends Component{
     constructor(p){
         super(p);
         this.state = {
-            // EnemyChoose: 
+            EnemyChoose: this.props.EnemyChoose, 
             choose: 0,
-            
+            NameChoose: ""
         }
         // alert(thi);
     
@@ -16,46 +16,71 @@ class ChooseList extends Component{
         this.chooseScissors = this.chooseScissors.bind(this);      
         this.checker = this.checker.bind(this);
     }
-    choosePaper(){
-        this.setState({
-            choose: 1,
-        })
-        alert("choose paper");
-        // e.preventDefault();
-    }
+    
     chooseRock() {
         this.setState ({
-            choose: 2,
+            choose: 1,
+            NameChose: "Rock"
         })
-        alert("choose Rock");
+
+
+    }
+    choosePaper() {
+        this.setState({
+            choose: 2,
+            NameChose: "Paper"
+        })
+
 
     }
     chooseScissors() {
         this.setState ({
             choose: 3,
+            NameChose: "Scissors"
         })
-        alert("choose Scissors");
+
         
     }
     checker(e) {
-        alert(this.state.choose);
-
+        if(this.state.choose == this.state.EnemyChoose){
+            alert("Nobody win");
+            window.location.reload();
+        }
+        else if (this.state.choose == 1 && this.state.EnemyChoose == 3){
+            alert("Player Win!");
+            window.location.reload();
+        }
+        else if (this.state.choose == 3 && this.state.EnemyChoose == 1) {
+            alert("Computer Win!");
+            window.location.reload();
+        }
+        else if (this.state.choose > this.state.EnemyChoose)
+        {
+            alert("Player Win!");
+            window.location.reload();
+        
+        }
+        else{
+            alert("Computer Win!");
+            window.location.reload();
+        }
     }
     render(){
-        const choose = this.state.choose; 
+       
+        console.log(this.props);
         return(
             
             <div>
                 <div>
-                    <p>Chose: {this.state.choose}</p>
+                    <p>Chose: {this.state.NameChose}</p>
                 </div>
                 <div className="choose-list">
-                    <button onClick={this.choosePaper}>Paper</button>
-                    <button onClick={this.chooseRock}>Rock</button>
-                    <button onClick={this.chooseScissors}>Scissors</button>
+                    <button className="btn Rock" onClick={this.chooseRock}>Rock</button>
+                    <button className="btn Paper" onClick={this.choosePaper}>Paper</button>
+                    <button className="btn Scissors" onClick={this.chooseScissors}>Scissors</button>
                 </div>
                 <div>
-                    <button onClick={this.checker}>GO!</button>   
+                    <button onClick={this.checker}>Fight!</button>   
                 </div>
             </div>
             

@@ -10,7 +10,7 @@ class Area extends Component{
         const random = Math.floor(Math.random() * (+max - +min)) + +min;
         this.state = {
             EnemyChoose: random,
-            choose: null
+            
         }
     }
         
@@ -24,7 +24,7 @@ class Area extends Component{
                 EnemyChoose = {this.state.EnemyChoose}
                 />
                 <h3>Your choose</h3>
-                <ChooseList/>
+                <ChooseList EnemyChoose={this.state.EnemyChoose} />
                 
             </div>
             

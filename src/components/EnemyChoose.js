@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 
 class EnemyChoose extends Component{
-    // constructor(){
-    //     super();
-    //     this.state = {
-    //         EnemyChoose: null
-    //     }
         
-    // }
-    
-    
     render(){
         const {EnemyChoose} = this.props;
         return(

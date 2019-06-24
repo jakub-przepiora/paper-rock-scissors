@@ -12,3 +12,7 @@ body{
 .choose-list div{
   padding: 10px;
 }
+.btn{
+  width: 200px;
+  height: 200px;
+}
