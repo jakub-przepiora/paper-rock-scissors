@@ -1,0 +1,14 @@
+body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.choose-list{
+  display: flex;
+  flex-direction: row;
+}
+.choose-list div{
+  padding: 10px;
+}
