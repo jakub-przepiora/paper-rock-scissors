@@ -19,7 +19,7 @@ class Area extends Component{
         return(
             <div>
                 <h1>Arena</h1>
-                <h3>Enemy choose</h3>
+                {/* <h3>Enemy choose</h3> */}
                 <EnemyChoose
                 EnemyChoose = {this.state.EnemyChoose}
                 />
